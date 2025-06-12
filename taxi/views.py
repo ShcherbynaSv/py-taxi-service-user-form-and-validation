@@ -1,7 +1,6 @@
 from django.contrib.auth.decorators import login_required
-from django.http import HttpRequest
 from django.shortcuts import render, get_object_or_404, redirect
-from django.urls import reverse_lazy
+from django.urls import reverse, reverse_lazy
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -92,9 +91,9 @@ class DriverCreateView(LoginRequiredMixin, generic.CreateView):
     form_class = DriverForm
 
 
-class DriverUpdateView(LoginRequiredMixin, generic.UpdateView):
-    model = Driver
-    form_class = DriverForm
+# class DriverUpdateView(LoginRequiredMixin, generic.UpdateView):
+#     model = Driver
+#     form_class = DriverForm
 
 
 class DriverDeleteView(LoginRequiredMixin, generic.DeleteView):
